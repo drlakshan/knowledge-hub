@@ -1,66 +1,79 @@
-# 🧠 Knowledge Hub — Dr. MTD Lakshan
+# 🧠 Knowledge Hub — Master Repository Map
 
-> Central index for my versioned knowledge system.  
-> Medical Education × Artificial Intelligence
+> Single source of navigation for Dr. Lakshan’s GitHub knowledge system.
 
-## Knowledge Map
-
-```mermaid
-graph TB
-    HUB[🧠 knowledge-hub] --> PRES[📊 markdown-presentations]
-    HUB --> RN[📝 research-notes]
-    HUB --> CURR[🎓 med-ed-curriculum]
-    HUB --> AI[🤖 ai-prompts-workflows]
-    HUB --> CV[📄 curriculum-vitae]
-    HUB --> JOURNEY[🚀 ai-journey]
-    
-    RN --> |feeds into| PRES
-    RN --> |informs| CURR
-    AI --> |enhances| CURR
-    AI --> |powers| PRES
-    JOURNEY --> |milestones| HUB
-    
-    style HUB fill:#7c3aed,color:#fff
-    style PRES fill:#3b82f6,color:#fff
-    style RN fill:#22c55e,color:#fff
-    style CURR fill:#f59e0b,color:#fff
-    style AI fill:#ec4899,color:#fff
-    style CV fill:#64748b,color:#fff
-    style JOURNEY fill:#14b8a6,color:#fff
-```
-
-## Active Repositories
-
-| Repo | Domain | Visibility | Status |
-|------|--------|------------|--------|
-| [knowledge-hub](https://github.com/drlakshan/knowledge-hub) | Central index | Public | 🟢 Active |
-| [markdown-presentations](https://github.com/drlakshan/markdown-presentations) | Marp talks | Public | 🟢 Active |
-| [research-notes](https://github.com/drlakshan/research-notes) | Research & literature | Private | 🟢 Active |
-| [med-ed-curriculum](https://github.com/drlakshan/med-ed-curriculum) | Course design | Private | 🟢 Active |
-| [ai-prompts-workflows](https://github.com/drlakshan/ai-prompts-workflows) | AI prompt library | Public | 🟢 Active |
-| [curriculum-vitae](https://github.com/drlakshan/curriculum-vitae) | CV (branched) | Private | 🟢 Active |
-| [ai-journey](https://github.com/drlakshan/ai-journey) | AI milestones | Private | 🟢 Active |
-
-## Archived Repositories
-
-`langchain` · `youtube-fabric-gui` · `twitter-meded-ai` · `nuxt-app` · `haem` · `entcollege` · `healthlk` · `dummy` · `portfolio_4--drive`
-
-## Intellectual Changelog
-
-See [CHANGELOG.md](CHANGELOG.md) for major milestones across all repos.
-
-## Portability
-
-This entire system is designed for zero vendor lock-in:
-- All content is plain Markdown + YAML
-- Automation logic lives in `scripts/` (not CI-specific configs)
-- CITATION.cff provides platform-independent citation metadata
-- See any repo's `ci-templates/` for multi-platform CI configs
-
-## Citation
-
-If you use any of this work, please cite using the CITATION.cff file in the relevant repository, or reference this hub.
+## System Intent
+Reduce confusion by maintaining a small **canonical active set** and archiving legacy/experimental repositories.
 
 ---
 
-*Built with Git. Portable by design. No vendor lock-in.*
+## Canonical Active Repositories
+
+| Repository | Primary role | Typical outputs | Status |
+|---|---|---|---|
+| [knowledge-hub](https://github.com/drlakshan/knowledge-hub) | System index, governance, changelog | Repo map, archive policy, standards | 🟢 Active |
+| [research-notes](https://github.com/drlakshan/research-notes) | Research capture and synthesis | Literature notes, reviews, paper drafts | 🟢 Active |
+| [med-ed-curriculum](https://github.com/drlakshan/med-ed-curriculum) | Curriculum design and frameworks | Course blueprints, teaching frameworks | 🟢 Active |
+| [ai-prompts-workflows](https://github.com/drlakshan/ai-prompts-workflows) | Prompt/system workflow library | Prompt templates, evals, automation scripts | 🟢 Active |
+| [ilai](https://github.com/drlakshan/ilai) | Public-facing web presence (ILAI) | Website pages/assets | 🟢 Active |
+| [Artificial-intelligence-learning](https://github.com/drlakshan/Artificial-intelligence-learning) | Academic AI portfolio/archive | CV material, presentations, milestone docs | 🟢 Active |
+
+---
+
+## Functional Flow (How repos connect)
+
+```mermaid
+graph LR
+    RN[research-notes] --> MEC[med-ed-curriculum]
+    RN --> AIPW[ai-prompts-workflows]
+    AIPW --> MEC
+    MEC --> ILAI[ilai]
+    RN --> K[knowledge-hub]
+    MEC --> K
+    AIPW --> K
+    ILAI --> K
+    AIL[Artificial-intelligence-learning] --> K
+```
+
+Interpretation:
+- `research-notes` is evidence intake.
+- `med-ed-curriculum` is educational packaging.
+- `ai-prompts-workflows` is AI method/automation layer.
+- `ilai` is public communication.
+- `knowledge-hub` is governance + map.
+
+---
+
+## Archive Governance
+
+When a repo is no longer active:
+1. Mark readme as archived + successor link.
+2. Tag final state (`archive-final-YYYY-MM`).
+3. Archive in GitHub settings.
+4. Record in this hub.
+
+Use: [ARCHIVE-CHECKLIST.md](ARCHIVE-CHECKLIST.md)
+
+---
+
+## Archived / Legacy Repositories
+
+`langchain` · `youtube-fabric-gui` · `twitter-meded-ai` · `nuxt-app` · `haem` · `entcollege` · `healthlk` · `dummy` · `portfolio_4--drive`
+
+> Note: keep archives searchable, but avoid active development there.
+
+---
+
+## Conventions
+
+- Markdown-first, Git-first, portable-by-design
+- Prefer reusable scripts over platform-locked automation
+- Keep one clear canonical repo per function
+
+---
+
+## Related
+
+- [CHANGELOG.md](CHANGELOG.md)
+- [KNOWLEDGE-MAP.mermaid](KNOWLEDGE-MAP.mermaid)
+- [CITATION.cff](CITATION.cff)
