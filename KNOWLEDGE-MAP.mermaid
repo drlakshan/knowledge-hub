@@ -1,33 +1,23 @@
 graph TB
-    subgraph "🧠 Knowledge System"
-        HUB[knowledge-hub<br/>Central Index]
-        
-        subgraph "📚 Content Repos"
-            PRES[markdown-presentations<br/>Marp · Purple Theme]
-            RN[research-notes<br/>Zettelkasten]
-            CURR[med-ed-curriculum<br/>Course Design]
-            AI[ai-prompts-workflows<br/>Prompt Library]
-        end
-        
-        subgraph "📄 Personal Repos"
-            CV[curriculum-vitae<br/>Branched CV]
-            JOURNEY[ai-journey<br/>Milestones]
-        end
+    subgraph "🧠 Canonical Active Set"
+        AIFA[Artificial-intelligence-Formal-Academic\nAcademic AI Portfolio]
+        AIPW[ai-prompts-workflows\nPrompt + Workflow Library]
+        ILAI[ilai\nPublic Website]
+        HUB[knowledge-hub\nMaster Index + Governance]
+        MEC[med-ed-curriculum\nCourse/Curriculum Design]
+        RN[research-notes\nEvidence + Synthesis]
+        SETUP[setup-original\nBootstrap Scripts]
     end
-    
-    subgraph "🌐 Separate"
-        ILAI[ilai.academy<br/>Website]
-    end
-    
-    HUB --> PRES
-    HUB --> RN
-    HUB --> CURR
-    HUB --> AI
-    HUB --> CV
-    HUB --> JOURNEY
-    
-    RN -.->|insights| PRES
-    RN -.->|evidence| CURR
-    AI -.->|enhances| CURR
-    AI -.->|powers| PRES
-    JOURNEY -.->|milestones| HUB
+
+    RN --> MEC
+    RN --> AIPW
+    AIPW --> MEC
+    MEC --> ILAI
+    AIFA --> ILAI
+
+    RN --> HUB
+    MEC --> HUB
+    AIPW --> HUB
+    ILAI --> HUB
+    AIFA --> HUB
+    SETUP --> HUB
