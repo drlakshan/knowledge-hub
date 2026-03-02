@@ -1,0 +1,21 @@
+# .github/workflows/validate.yml
+# Thin wrapper — all logic lives in scripts/ for portability
+name: Validate Knowledge
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate frontmatter
+        run: bash scripts/validate-frontmatter.sh
+      - name: Check internal links
+        run: bash scripts/check-links.sh
+      - name: Generate stats
+        run: bash scripts/knowledge-stats.sh

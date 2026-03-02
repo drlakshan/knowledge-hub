@@ -1,0 +1,17 @@
+# .gitlab-ci.yml
+# Thin wrapper — all logic lives in scripts/ for portability
+stages:
+  - validate
+
+validate-content:
+  stage: validate
+  image: alpine:latest
+  script:
+    - apk add --no-cache bash grep
+    - bash scripts/validate-frontmatter.sh
+    - bash scripts/check-links.sh
+    - bash scripts/knowledge-stats.sh
+  only:
+    - main
+    - develop
+    - merge_requests

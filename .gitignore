@@ -1,0 +1,32 @@
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Editor configs
+.vscode/
+.idea/
+*.code-workspace
+
+# Build outputs
+build/
+dist/
+output/
+*.pdf
+*.pptx
+*.html
+
+# Dependencies
+node_modules/
+
+# Secrets
+.env
+*.key
+*.pem
+
+# Temporary
+tmp/
+temp/
+*.tmp
